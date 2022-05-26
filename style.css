@@ -10,3 +10,10 @@
 .top {
   background-color: black;
 }
+
+.navigation {
+	color: black;
+	font-size: 30px;
+	padding:5%;
+	text-align: center;
+}
