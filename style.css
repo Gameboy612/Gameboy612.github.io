@@ -1,8 +1,12 @@
 .header {
   background-color: black;
   color: white; 
-  width: 95%;
+  width: 98%;
   text-align: center;
-  padding: 2.5%;
-  font-size: 40px
+  padding: 1.5%;
+  font-size: 35px;
+}
+
+.top {
+  background-color: black;
 }
