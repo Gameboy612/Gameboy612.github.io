@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+<head>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Gamiboi's Furniture Datapack - Block Generator</h1>
+    <form name="createBlock" onsubmit="return form()" method="post">
+        <label for="custom_model_data">CustomModelData:</label><br>
+        <input type="text" id="custom_model_data" name="custom_model_data"><br>
+        <label for="block_name">Block Name:</label><br>
+        <input type="text" id="block_name" name="block_name"><br>
+        
+        <input type="radio" id="barrier" name="base_block" value="Barrier">
+        <label for="barrier">Barrier</label><br>
+        <input type="radio" id="string" name="base_block" value="String">
+        <label for="string">String</label><br>
+        <input type="radio" id="light" name="base_block" value="Light">
+        <label for="light">Light</label>
+        <input type="text" id="light_level" name="light_level" style=width:20px>
+        <br>
+        <input type="radio" id="slab" name="base_block" value="Slab">
+        <label for="slab">Slab</label><br><br>
+
+        <input type="submit">
+    </form>
+    <br><br><br><br><br>
+    <p1 id="output"></p1>
+</body>
+
+</html>
