@@ -61,7 +61,7 @@ AFRAME.registerComponent("gesture-handler", {
       this.el.object3D.scale.set(1, 1, 1);
       this.data.scaleFactor = 0;
     } else if (mode == "gyroscopic") {
-      this.data.scaleFactor = this.schema.scaleFactor.default;
+      this.data.scaleFactor = 1;
     }
   },
 
