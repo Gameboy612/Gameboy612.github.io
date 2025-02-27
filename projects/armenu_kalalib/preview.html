@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="style.css">
-  <script src="./js/aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="./js/aframe-ar.js"></script>
+  <head>
+    <title>ARMenu - KALA</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/arjs/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="./js/arjs/aframe-ar.js"></script>
+
+    <!-- <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script> -->
+
+
+    <!-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+    <script src="./js/arjs/gesture-detector.js"></script>
+    <script src="./js/arjs/gesture-handler.js"></script>
+  </head>
 
   <body style="margin : 0px; overflow: hidden;">
     
     <a-scene
         embedded
         arjs
-        
+        renderer="logarithmicDepthBuffer: true;"
         gesture-detector
         vr-mode-ui="enabled: false"
         id="scene"
         >
-        <!-- renderer="logarithmicDepthBuffer: true;" -->
-        <a-marker preset="data/patt.hiro">
+      <a-marker
+      preset="data/patt.hiro"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="markerA"
+    >
           <!-- we use cors proxy to avoid cross-origin problems -->
-          <!--
-            ⚠️⚠️⚠️
-            https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
-            You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-            ⚠️⚠️⚠️
-          -->
           <a-entity
             id="display_entity"
             position="0 0 0"
             scale="1 1 1"
-            gltf-model="data/2_4_2025.glb"
+            gltf-model="data/2_4_2025.glb"      
+            class="clickable"
+            gesture-handler="minScale: 0.25; maxScale: 10"
           ></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
@@ -36,7 +51,7 @@
   
     <div class="screen">
         
-        <div class="ui">
+        <span id="ui">
             <div id="header">
                 <h1 id="title">Cuisine Name</h1>
                 <p id="description">Description</p>
@@ -44,15 +59,24 @@
             <button id="price" onclick="modelManipulator.buyItem()">
                 <h1 id="price_text">$ 49.0</h1>
             </button>
-            <svg id="left_arrow" class="arrow" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+            <div onclick="modelManipulator.previousModel()" class="arrow_container" id="left_arrow_container">
+              <svg id="left_arrow" class="arrow" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div onclick="modelManipulator.nextModel()" class="arrow_container" id="right_arrow_container">
+              <svg id="right_arrow" class="arrow" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
 
-            <svg id="right_arrow" class="arrow" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </div>
+            <button id="mode_button" onclick="modelManipulator.toggleMode()">
+              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="black"/>
+              </svg>
+            </button>
+          </span>
     </div>
-    <script src="preview.js"></script>
+    <script src="./js/preview/menuitems.js"></script>
   </body>
 </html>
