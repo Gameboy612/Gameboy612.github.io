@@ -66,7 +66,7 @@ AFRAME.registerComponent("gesture-handler", {
   },
 
   handleScale: function (event) {
-    if (this.isVisible) {
+    if (this.isVisible && (this.data.scaleFactor != 0)) {
       this.data.scaleFactor *=
         1 + event.detail.spreadChange / event.detail.startSpread;
 
