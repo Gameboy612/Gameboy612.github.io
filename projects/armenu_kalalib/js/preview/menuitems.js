@@ -7,20 +7,20 @@ const urlParams = new URLSearchParams(queryString);
 
 const menu = [
     {
-        "title": "Premium Congee",
+        "title": "Boba Icy Yum",
         "description": "Delicious!",
         "price": 49.0,
         "model": "data/16_3_2025.glb"
     },
     {
-        "title": "Premium Congee",
-        "description": "Delicious!",
+        "title": "Chewy Icy Yum",
+        "description": "Chewy!",
         "price": 49.0,
         "model": "data/16_3_2025(1).glb"
     },
     {
-        "title": "Premium Congee",
-        "description": "Delicious!",
+        "title": "Sharp Icy Yumm",
+        "description": "OOhhh!",
         "price": 49.0,
         "model": "data/16_3_2025(2).glb"
     },
