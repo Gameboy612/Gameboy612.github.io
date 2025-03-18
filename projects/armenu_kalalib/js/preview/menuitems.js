@@ -35,6 +35,12 @@ const menu = [
         "description": "Yummy!",
         "price": 39.0,
         "model": "data/compressed_2_19_2025.glb"
+    },
+    {
+        "title": "Chocolate Butter Bun",
+        "description": "UM Deluxe",
+        "price": 39.0,
+        "model": "data/3_18_2025.glb"
     }
 ];
 
