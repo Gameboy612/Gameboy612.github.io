@@ -10,6 +10,24 @@ const menu = [
         "title": "Premium Congee",
         "description": "Delicious!",
         "price": 49.0,
+        "model": "data/16_3_2025.glb"
+    },
+    {
+        "title": "Premium Congee",
+        "description": "Delicious!",
+        "price": 49.0,
+        "model": "data/16_3_2025(1).glb"
+    },
+    {
+        "title": "Premium Congee",
+        "description": "Delicious!",
+        "price": 49.0,
+        "model": "data/16_3_2025(2).glb"
+    },
+    {
+        "title": "Premium Congee",
+        "description": "Delicious!",
+        "price": 49.0,
         "model": "data/compressed_2_4_2025.glb"
     },
     {
