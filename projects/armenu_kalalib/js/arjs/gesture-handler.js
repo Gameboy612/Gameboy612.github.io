@@ -5,7 +5,7 @@ AFRAME.registerComponent("gesture-handler", {
     enabled: { default: true },
     rotationFactor: { default: 5 },
     scaleFactor: {default : 0},
-    minScale: { default: 3 },
+    minScale: { default: 2 },
     maxScale: { default: 8 },
     mode: { default: "ar" }
   },
@@ -58,7 +58,7 @@ AFRAME.registerComponent("gesture-handler", {
     if (mode == "ar") {
       this.el.object3D.rotation.x = 0;
       this.el.object3D.rotation.y = 0;
-      this.el.object3D.scale.set(3, 3, 3);
+      this.el.object3D.scale.set(2, 2, 2);
       this.data.scaleFactor = 0;
     } else if (mode == "gyroscopic") {
       this.data.scaleFactor = 1;
