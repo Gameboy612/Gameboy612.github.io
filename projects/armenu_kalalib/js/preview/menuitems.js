@@ -7,6 +7,13 @@ const urlParams = new URLSearchParams(queryString);
 
 const menu = [
     {
+        "title": "WingGor 粟米餃",
+        "description": "Delicious!",
+        "price": 45.0,
+        "model": "data/dumpling_house.glb",
+        "image":"https://media-hosting.imagekit.io//48bc374b85b34974/%E4%B8%8B%E8%BC%89%20(1).jpeg?Expires=1837015293&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=JnXks9Cd2sL-WL~CrIYFWEwbsLIrlvzRWNQevIMIcABKFueQQsiaUIHQ0jQdvUgQB9zno05mMvMGqR5wRxi9SlAy9J5HjL9P-Zas3y5jvJQWjNp28A-V83bNVIC~JRxmHe9jpiAq56fyixHiKGHZMyzVygaCA4T7YJwh57CJbxOM0zwGAM8RRhHYOfcJPKhJJCm2o6h560-Dk7S7TjLi8CnmxEc3AvDkvr5enWfJlgp6n-HdM9boIGQK0pGare6SudKm3JjbcWtfbYtkjSHz-gRck-SBh8bokQ6t8QA3CkThlv~cYqbiIvmoEZpFETj0PQwg3DHQh~O34jy3cmLKlg__" //the image download from web for testing only
+    },
+    {
         "title": "Premium Congee",
         "description": "Delicious!",
         "price": 49.0,
